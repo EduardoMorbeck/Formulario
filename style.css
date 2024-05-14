@@ -28,12 +28,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fde3a7d7;
+    background-color: #6b63ff86;
     padding: 1rem;
 }
 
 .form-image img{
-    width: 31rem;
+    width: 100%;
 }
 
 .form{
@@ -168,7 +168,7 @@ body{
 
 @media screen and (max-width: 1064px){
     .container{
-        width: 90%;
+        width: 70%;
         height: auto;
     }
     .input-group{
