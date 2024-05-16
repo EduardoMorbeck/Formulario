@@ -19,39 +19,45 @@
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar <i class="fa-solid fa-right-to-bracket"></i></a></button>
+                        <button type="submit">Entrar <i class="fa-solid fa-right-to-bracket"></i></button>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname"><i class="fa-solid fa-user"></i> Primeiro nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome">
+                        <a>Mensagem de erro...</a>
                     </div>
 
                     <div class="input-box">
                         <label for="lastname"><i class="fa-regular fa-user"></i> Último nome</label>
-                        <input id="lastname" type="text" name="lasstname" placeholder="Digite seu último nome" required>
+                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu último nome">
+                        <a>Mensagem de erro...</a>
                     </div>
 
                     <div class="input-box">
                         <label for="email"><i class="fa-solid fa-envelope"></i> E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail">
+                        <a>Mensagem de erro...</a>
                     </div>
 
                     <div class="input-box">
                         <label for="number"><i class="fa-solid fa-phone"></i> Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx">
+                        <a>Mensagem de erro...</a>
                     </div>
 
                     <div class="input-box">
                         <label for="password"><i class="fa-solid fa-lock"></i> Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha">
+                        <a>Mensagem de erro...</a>
                     </div>
 
                     <div class="input-box">
                         <label for="confirmPassword"><i class="fa-solid fa-key"></i> Confirme sua senha</label>
-                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirme sua senha" required>
+                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirme sua senha">
+                        <a>Mensagem de erro...</a>
                     </div>
                 </div>
 
@@ -76,18 +82,18 @@
                         </div>
 
                         <div class="gender-input">
-                            <input type="radio" name="gender" id="none">
+                            <input type="radio" name="gender" id="none" checked>
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a></button>
+                    <button type="submit">Continuar</button>
                 </div>
             </form>
         </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
