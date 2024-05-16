@@ -19,38 +19,54 @@ form.addEventListener('submit', (event) => {
 function checkFirstName(){
     const firstnameValue = firstname.value
     if(firstnameValue === ""){
-        errorInput(firstname, "Preencha o campo!")
+        errorInput(firstname, "Preencha o campo")
+        return false
     }
 }
 
 function checkLastName(){
     const lastnameValue = lastname.value
     if(lastnameValue === ""){
-        errorInput(lastname, "Preencha o campo!")
+        errorInput(lastname, "Preencha o campo")
+        return false
     }
 }
 
 function checkEmail(){
     const emailValue = email.value
     if(emailValue === ""){
-        errorInput(email, "Informe um e-mail!")
+        errorInput(email, "Informe um e-mail")
+        return false
     }
 }
 
 function checkNumber(){
-    const emailValue = email.value
-    if(emailValue === ""){
-        errorInput(email, "Informe um e-mail!")
+    const numberValue = number.value
+    if(numberValue === ""){
+        errorInput(number, "Informe um contato")
+        return false
     }
 }
 
 function checkPassword(){
     const passwordValue = password.value
     const confirmPasswordValue = confirmPassword.value
-    if(passwordValue === "" || confirmPasswordValue === ""){
-        errorInput(password, "Crie uma senha")
-        errorInput(confirmPassword, "Confirme sua senha")
+    if(passwordValue === ""){
+        errorInput(password, "Digite uma senha")
+        return false
     }
+
+    if(confirmPasswordValue != passwordValue){
+        errorInput(confirmPassword, "Digite a mesma senha")
+        return false
+    }
+
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.@$!%*?&])[A-Za-z\d.@$!%*?&]{8,}$/;
+    if (!regex.test(passwordValue)) {
+        errorInput(password, "A senha deve conter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula e um caractere especial");
+        return false
+    }
+    return true
 }
 
 function errorInput(input, message){
