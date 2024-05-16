@@ -8,14 +8,45 @@ const confirmPassword = document.getElementById('confirmPassword')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
+    checkForm()
+});
 
+firstname.addEventListener('blur', ()=>{
+    checkFirstName()
+})
+lastname.addEventListener('blur', ()=>{
+    checkLastName()
+})
+email.addEventListener('blur', ()=>{
+    checkEmail()
+})
+number.addEventListener('blur', ()=>{
+    checkNumber()
+})
+password.addEventListener('blur', ()=>{
+    checkPassword()
+})
+confirmPassword.addEventListener('blur', ()=>{
+    checkConfirmPassword()
+})
+
+function checkForm(){
     checkFirstName()
     checkLastName()
     checkEmail()
     checkNumber()
     checkPassword()
     checkConfirmPassword()
-});
+
+    const formItems = form.querySelectorAll(".input-box")
+    const isValid = [...formItems].every( (item) => {
+        return item.className === 'input-box'
+    })
+    if(isValid){
+        alert('Cadastrado com sucesso!')
+    }
+    
+}
 
 function checkFirstName(){
     const firstnameValue = firstname.value
