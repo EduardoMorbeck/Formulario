@@ -14,13 +14,16 @@ form.addEventListener('submit', (event) => {
     checkEmail()
     checkNumber()
     checkPassword()
+    checkConfirmPassword()
 });
 
 function checkFirstName(){
     const firstnameValue = firstname.value
     if(firstnameValue === ""){
         errorInput(firstname, "Preencha o campo")
-        return false
+    }else{
+        const formItem = firstname.parentElement
+        formItem.className = "input-box"
     }
 }
 
@@ -28,7 +31,9 @@ function checkLastName(){
     const lastnameValue = lastname.value
     if(lastnameValue === ""){
         errorInput(lastname, "Preencha o campo")
-        return false
+    }else{
+        const formItem = lastname.parentElement
+        formItem.className = "input-box"
     }
 }
 
@@ -36,7 +41,9 @@ function checkEmail(){
     const emailValue = email.value
     if(emailValue === ""){
         errorInput(email, "Informe um e-mail")
-        return false
+    }else{
+        const formItem = email.parentElement
+        formItem.className = "input-box"
     }
 }
 
@@ -45,28 +52,33 @@ function checkNumber(){
     if(numberValue === ""){
         errorInput(number, "Informe um contato")
         return false
+    }else{
+        const formItem = number.parentElement
+        formItem.className = "input-box"
     }
 }
 
 function checkPassword(){
     const passwordValue = password.value
-    const confirmPasswordValue = confirmPassword.value
     if(passwordValue === ""){
         errorInput(password, "Digite uma senha")
-        return false
+    }else if(passwordValue.length < 8){
+        errorInput(password, "A senha precisa ter no mínimo 8 caracteres")
+    }else{
+        const formItem = password.parentElement
+        formItem.className = "input-box"
     }
+}
 
-    if(confirmPasswordValue != passwordValue){
+function checkConfirmPassword(){
+    const passwordValue = password.value
+    const confirmPasswordValue = confirmPassword.value
+    if(confirmPasswordValue !== passwordValue){
         errorInput(confirmPassword, "Digite a mesma senha")
-        return false
+    }else{
+        const formItem = confirmPassword.parentElement
+        formItem.className = "input-box"
     }
-
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.@$!%*?&])[A-Za-z\d.@$!%*?&]{8,}$/;
-    if (!regex.test(passwordValue)) {
-        errorInput(password, "A senha deve conter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula e um caractere especial");
-        return false
-    }
-    return true
 }
 
 function errorInput(input, message){
