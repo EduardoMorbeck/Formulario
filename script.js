@@ -63,7 +63,7 @@ function checkPassword(){
     if(passwordValue === ""){
         errorInput(password, "Digite uma senha")
     }else if(passwordValue.length < 8){
-        errorInput(password, "A senha precisa ter no mínimo 8 caracteres")
+        errorInput(password, "No mínimo 8 caracteres")
     }else{
         const formItem = password.parentElement
         formItem.className = "input-box"
